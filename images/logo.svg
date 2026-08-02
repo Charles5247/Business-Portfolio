@@ -1,0 +1,10 @@
+<svg width="600" height="540" viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Supremework Synergy logo</title>
+  <desc id="logoDesc">A green and orange outlined SW monogram on a black background.</desc>
+  <rect width="600" height="540" fill="#000000"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <text x="300" y="360" text-anchor="middle" font-size="420" font-weight="900" font-family="Arial Black, Segoe UI Black, Impact, sans-serif" letter-spacing="-20" stroke="#2a8d57" stroke-width="26">SW</text>
+    <text x="300" y="360" text-anchor="middle" font-size="420" font-weight="900" font-family="Arial Black, Segoe UI Black, Impact, sans-serif" letter-spacing="-20" stroke="#f39c12" stroke-width="18">SW</text>
+    <text x="300" y="360" text-anchor="middle" font-size="420" font-weight="900" font-family="Arial Black, Segoe UI Black, Impact, sans-serif" letter-spacing="-20" stroke="#9ecd59" stroke-width="10">SW</text>
+  </g>
+</svg>
