@@ -1,5 +1,9 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_CONFIGURED } from "./supabase-config.js";
+import {
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY,
+  SUPABASE_CONFIGURED,
+} from "./supabase-config.js";
 
 /* ---------------------------------------------------------
    Mobile nav toggle
@@ -38,7 +42,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const target = document.querySelector(targetId);
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    const top =
+      target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
     window.scrollTo({ top, behavior: "smooth" });
   });
 });
@@ -57,7 +62,7 @@ if ("IntersectionObserver" in window && revealEls.length) {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.12 },
   );
   revealEls.forEach((el) => observer.observe(el));
 } else {
@@ -77,7 +82,9 @@ function setStatus(message, type) {
 }
 
 if (form) {
-  const supabase = SUPABASE_CONFIGURED ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+  const supabase = SUPABASE_CONFIGURED
+    ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -91,15 +98,20 @@ if (form) {
       phone: form.phone.value.trim(),
     };
 
-    if (!payload.name || !payload.company || !payload.service_needed || !payload.phone) {
+    if (
+      !payload.name ||
+      !payload.company ||
+      !payload.service_needed ||
+      !payload.phone
+    ) {
       setStatus("Please fill in all required fields.", "error");
       return;
     }
 
     if (!SUPABASE_CONFIGURED || !supabase) {
       setStatus(
-        "Form is not yet connected to the database. Please contact us directly at 08027370644 / 08069112138 or supremeworksynergy@gmail.com, or ask your developer to configure js/supabase-config.js.",
-        "error"
+        "Form is not yet connected to the database. Please contact us directly at 0806 911 2138 / 0815 558 3192 or supremeworksynergy@gmail.com, or ask your developer to configure js/supabase-config.js.",
+        "error",
       );
       return;
     }
@@ -113,14 +125,14 @@ if (form) {
 
       setStatus(
         "Thank you. Your quote request has been received — our engineering team will contact you shortly.",
-        "success"
+        "success",
       );
       form.reset();
     } catch (err) {
       console.error("Supabase insert failed:", err);
       setStatus(
-        "Something went wrong sending your request. Please call us on 08027370644 / 08069112138 instead.",
-        "error"
+        "Something went wrong sending your request. Please call us on 0806 911 2138 / 0815 558 3192 instead.",
+        "error",
       );
     } finally {
       submitBtn.disabled = false;
