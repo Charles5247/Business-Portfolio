@@ -325,8 +325,9 @@ section {
    Hero
    ========================================================= */
 .hero {
+  max-width: 100%;
   position: relative;
-  min-height: 92vh;
+  max-height: 100vh;
   display: flex;
   align-items: center;
   color: var(--white);
@@ -348,7 +349,8 @@ section {
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 85%;
+  max-width: 90%;
+  max-height: 80vh;
 }
 .hero .eyebrow {
   color: var(--green);
